@@ -1,0 +1,46 @@
+# Ignore env local files
+.idea
+/.idea
+.directory
+.DS_Store
+nbproject
+
+# sublime confs
+*sftp-config*
+*sublime-project*
+*sublime-workspace*
+
+# uncomment to exclude bitrix public-files
+#/*
+
+# Ingore
+/public/*
+/restore.php
+!.*
+!/.*
+/*.tar.gz
+/*.tar.gz.*
+
+
+# exclude bitrix uploads
+/upload/resize_cache/
+
+# urlrewrite chanches to often. Ignore and fixing changes in copy urlrewrite_.php manualy.
+# /urlrewrite.php
+
+# /.gitignore
+
+/bitrix/*
+!/bitrix/components/
+/bitrix/components/bitrix/
+!/bitrix/php_interface/
+
+/upload/
+!/upload/*.php
+
+# readme log
+!/README.md
+
+
+/sitemap*.xml
+/robots.txt
