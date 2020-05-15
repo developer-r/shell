@@ -32,6 +32,14 @@ $arUrlRewrite=array (
     'PATH' => '/contents/confident/index.php',
     'SORT' => 100,
   ),
+  6 => 
+  array (
+    'CONDITION' => '#^/catalog/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/catalog/index.php',
+    'SORT' => 100,
+  ),
   5 => 
   array (
     'CONDITION' => '#^/buyers/#',

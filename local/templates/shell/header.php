@@ -113,25 +113,13 @@
 </header>
 
 <!-- catalog modal -->
-<?$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "inc",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/modals/catalog_modal.php"
-    )
-);?>
+<? include INCLUDE_PATH . '/modals/catalog_modal.php' ?>
 
 <!-- menu left -->
-<?$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "inc",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/include/menu_left.php"
-    )
-);?>
+<? include INCLUDE_PATH . '/menu_left.php' ?>
+
+<!-- menu right -->
+<? include INCLUDE_PATH . '/menu_right.php' ?>
+
+<!-- basket -->
+<? include INCLUDE_PATH . '/modals/basket.php' ?>

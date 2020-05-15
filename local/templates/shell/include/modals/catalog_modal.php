@@ -1,9 +1,16 @@
 <div class="catalog-modal" id="catalog-modal">
     <div class="header header_main">
-        <a class="logo" id="logo" href="/">
-            <img class="logo_media" src="img/logo-grey.svg" alt="" title=""/>
-            <img class="logo_search" src="img/logo.svg" alt="" title=""/>
-        </a>
+        <!-- logo grey -->
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            "",
+            Array(
+                "AREA_FILE_SHOW" => "file",
+                "AREA_FILE_SUFFIX" => "inc",
+                "EDIT_TEMPLATE" => "",
+                "PATH" => SITE_TEMPLATE_PATH . "/include/logo.php"
+            )
+        );?>
         <!-- menu top -->
         <?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
             "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
@@ -22,21 +29,25 @@
         ),
             false
         );?>
-        <div class="phone_wrapper" id="phone"><a class="phone_link" href="tel:+73912054005">+ 7 (391) 228-70-80</a><a
-                class="phone_modal" href="">Заказать звонок</a></div>
-        <div class="menuright" id="menurighttrigger"><a class="menuright_link menuright_link_basket" data-fancybox=""
-                                                        href="#basket" data-options='{"touch":false}'>
-                <div class="menuright_icon"><img src="img/basket.svg" alt="" title=""/></div>
-                <span class="menuright_count">12</span></a><a class="menuright_link" href="">
-                <div class="menuright_icon"><img src="img/human.svg" alt="" title=""/></div>
-            </a><a class="menuright_link" href="">
-                <div class="menuright_icon"><img src="img/clock.svg" alt="" title=""/></div>
-                <span class="menuright_count">12</span></a><a class="js-catalog-open menuright_link" id="search"
-                                                              data-fancybox="" data-src="#catalog-modal"
-                                                              href="javascript:;">
-                <div class="menuright_icon"><img src="img/search.svg" alt="" title=""/></div>
-            </a></div>
+        <div class="phone_wrapper" id="phone">
+            <a class="phone_link" href="tel:<?=$phone?>">
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => SITE_TEMPLATE_PATH . "/include/phone.php"
+                    )
+                );?>
+            </a>
+            <a class="phone_modal" href="">Заказать звонок</a>
+        </div>
+        <!-- menu right -->
+        <? include INCLUDE_PATH . '/menu_right.php' ?>
     </div>
+
     <a class="form_close form_close__left form_close--catalog" id="menuleftClose" data-fancybox-close="" title="Close">
         <div class="catalog-line--left__wrapper catalog-line--left__wrapper__1">
             <div class="needtohide" data-fancybox-close="" title="Close">
@@ -45,16 +56,18 @@
                 </svg>
             </div>
         </div>
-        <div class="catalog-line--left__wrapper__2"><span
-                class="catalog-line--left__text catalog-line--left__text__white">Каталог</span></div>
+        <div class="catalog-line--left__wrapper__2">
+            <span class="catalog-line--left__text catalog-line--left__text__white">Каталог</span>
+        </div>
     </a>
-    <div class="form_close form_close__right formCloseRight"><a class="form_close--catalog fancybox-close-small"
-                                                                data-fancybox-close="" title="Close">
+    <div class="form_close form_close__right formCloseRight">
+        <a class="form_close--catalog fancybox-close-small" data-fancybox-close="" title="Close">
             <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
-                <path fill="#59595B" fill-rule="nonzero"
-                      d="M19.5 17.373L36.873 0 39 2.127 21.627 19.5 39 36.873 36.873 39 19.5 21.627 2.127 39 0 36.873 17.373 19.5 0 2.127 2.127 0 19.5 17.373z"></path>
+                <path fill="#59595B" fill-rule="nonzero" d="M19.5 17.373L36.873 0 39 2.127 21.627 19.5 39 36.873 36.873 39 19.5 21.627 2.127 39 0 36.873 17.373 19.5 0 2.127 2.127 0 19.5 17.373z"></path>
             </svg>
-        </a></div>
+        </a>
+    </div>
+
     <div class="fancy">
         <div class="fancy-inner">
             <div class="catalog-double content custom-scroll--container">
